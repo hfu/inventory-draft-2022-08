@@ -22,7 +22,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGZ1IiwiYSI6ImNsM3FtcDZhdjBicXkzanA3Y2JzNmU2aTgifQ.HynxLHuhHkXyHdhedAgMyA';
 const map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/mapbox/satellite-v9',
+  style: 'https://ggim-exercise.github.io/inventory/style.json',
   zoom: 1.5,
   maxZoom: 8,
   center: [0, 0],
@@ -31,21 +31,6 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl())
 map.on('load', () => {
   map.setFog({})
-  map.addSource('inventory', {
-    type: 'geojson',
-    data: 'https://raw.githubusercontent.com/ggim-exercise/inventory/main/docs/inventory.geojson',
-    cluster: true,
-    clusterMaxZoom: 14, // Max zoom to cluster points on
-    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
-  })
-  map.addLayer({
-    id: 'clusters',
-    type: 'circle',
-    source: 'inventory',
-    paint: {
-      'circle-color': '#51bbd6'
-    }
-  })
 })
   </script>
 </body>
