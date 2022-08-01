@@ -9,7 +9,7 @@
   <style>
     body { margin: 0; padding: 0; }
     #map { position: absolute; top: 0; bottom: 0; width: 100% }
-    #map canvas { cursor: crosshair; }
+    #map canvas { cursor: pointer; }
     #properties { position: absolute; top: 0; 
       left: 0; right: 0; pointer-events: none; 
       overflow: auto; background: rgba(255, 255, 255, 0.8); }
@@ -34,11 +34,14 @@ const show = (features) => {
   for (let feature of features) {
     console.log(feature)
     switch (feature.layer.id) {
+      let props = feature.properties
       case 'platforms':
-        html += 'pl'
+        html += `<h2><a href="${props._2_platfor}">${props._1_from_wh}</a><h2>`
+        html += `<h3>mandate</h3>${props._4_mandate}`
         break
       case 'organizations':
-        html += 'or'
+        html += `<h2><a href="${props._2_platfor}">${props._1_from_wh}</a><h2>`
+        html += `<h3>mandate</h3>${props._4_mandate}`
         break
       default:
     }
