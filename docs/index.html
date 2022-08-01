@@ -31,6 +31,12 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl())
 map.on('load', () => {
   map.setFog({})
+  map.on('click', 'p', e => {
+    console.log('p: ' + e.features)
+  })
+  map.on('click', 'o', e => {
+    console.log('o: ' + e.features)
+  })
 })
   </script>
 </body>
