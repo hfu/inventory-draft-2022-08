@@ -31,7 +31,7 @@ const map = new mapboxgl.Map({
 const properties = document.getElementById('properties')
 const show = (features) => {
   let html = ''
-  for (let feature in features) {
+  for (let feature of features) {
     console.log(feature)
     switch (feature.layer.id) {
       case 'platforms':
