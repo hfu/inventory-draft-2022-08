@@ -37,6 +37,9 @@ map.on('load', () => {
   map.on('click', 'o', e => {
     console.log('o: ' + e.features)
   })
+  map.on('click', 'inventory', e => {
+    console.log('inventory: ' + e.features)
+  })
 })
   </script>
 </body>
