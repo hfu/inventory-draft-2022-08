@@ -34,14 +34,14 @@ const show = (features) => {
   for (let feature of features) {
     console.log(feature)
     switch (feature.layer.id) {
-      let props = feature.properties
       case 'platforms':
-        html += `<h2><a href="${props._2_platfor}">${props._1_from_wh}</a><h2>`
-        html += `<h3>mandate</h3>${props._4_mandate}`
+        html += `<h2><a href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a><h2>`
+        html += `<h3>mandate</h3>${feature.properties._4_mandate}`
         break
       case 'organizations':
-        html += `<h2><a href="${props._2_platfor}">${props._1_from_wh}</a><h2>`
-        html += `<h3>mandate</h3>${props._4_mandate}`
+        html += `<h2><a href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a><h2>`
+        html += `<h3>mandate</h3>${feature.properties._4_mandate}`
+        html += `<h3>hazard</h3>${feature.properties._8_hazard_}`
         break
       default:
     }
