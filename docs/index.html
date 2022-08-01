@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Global Disaster Risk Reduction (DRR) Organizations, Geospatial Information Services and Platforms Inventory Hub</title>
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css">
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
@@ -54,8 +54,8 @@ const show = (features) => {
         html += `</table>`
         break
       case 'organizations':
-        html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a></h2>`
-        html += `<table>`
+        html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a></h2>Properties for`
+        html += `Organizations<table>`
         html += `<tr><th>mandate</th><td>${feature.properties._4_mandate}</td></tr>`
         html += `<tr><th>hazard</th><td>${feature.properties._8_hazard_.split(",").join(", ")}</td><\tr>`
         html += `<tr><th>data type</th><td>${feature.properties._9_type_of.split(",").join(", ")}</td></tr>`
