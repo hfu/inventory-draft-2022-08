@@ -28,18 +28,15 @@ const map = new mapboxgl.Map({
   center: [0, 0],
   projection: 'globe'
 })
+const properties = document.getElementById('properties')
+const show = (features) => {
+  properties.innerHTML = JSON.stringify(features)
+}
 map.addControl(new mapboxgl.NavigationControl())
 map.on('load', () => {
   map.setFog({})
-  map.on('click', 'platforms', e => {
-    console.log('p: ' + e.features)
-  })
-  map.on('click', 'organizations', e => {
-    console.log('o: ' + e.features)
-  })
-  map.on('click', 'inventory', e => {
-    console.log('inventory: ' + e.features)
-  })
+  map.on('click', 'platforms', e => show(e.features))
+  map.on('click', 'organizations', e => show(e.features))
 })
   </script>
 </body>
