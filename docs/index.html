@@ -31,10 +31,10 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl())
 map.on('load', () => {
   map.setFog({})
-  map.on('click', 'p', e => {
+  map.on('click', 'platforms', e => {
     console.log('p: ' + e.features)
   })
-  map.on('click', 'o', e => {
+  map.on('click', 'organizations', e => {
     console.log('o: ' + e.features)
   })
   map.on('click', 'inventory', e => {
