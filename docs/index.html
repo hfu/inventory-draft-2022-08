@@ -10,7 +10,7 @@
     body { margin: 0; padding: 0; }
     #map { position: absolute; top: 0; bottom: 0; width: 100% }
     #map canvas { cursor: crosshair; }
-    #properties { position: absolute; bottom: 0; 
+    #properties { position: absolute; top: 0; 
       left: 0; right: 0; pointer-events: none; 
       overflow: auto; background: rgba(255, 255, 255, 0.8); }
   </style>
@@ -32,6 +32,7 @@ const properties = document.getElementById('properties')
 const show = (features) => {
   let html = ''
   for (let feature in features) {
+    console.log(feature)
     switch (feature.layer.id) {
       case 'platforms':
         html += 'pl'
