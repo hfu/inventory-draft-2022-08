@@ -46,7 +46,8 @@ const show = (features) => {
       case 'organizations':
         html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a><h2>`
         html += `<h3>mandate</h3>${feature.properties._4_mandate}`
-        html += `<h3>hazard</h3>${feature.properties._8_hazard_}`
+        html += `<h3>hazard</h3>${feature.properties._8_hazard_.split(",").join(", ")}`
+        html += `<h3>data type</h3>${feature.properties._9_type_of.split(",").join(", ")}`
         break
       default:
     }
