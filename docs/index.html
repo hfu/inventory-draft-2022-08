@@ -46,7 +46,7 @@ const show = (features) => {
     switch (feature.layer.id) {
       case 'platforms':
         html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a></h2>`
-        html += `<table border="1">`
+        html += `<table>`
         html += `<tr><th>mandate</th><td>${feature.properties._4_mandate}</td></tr>`
         html += `<tr><th>hazard</th><td>${feature.properties._8_hazard_.split(",").join(", ")}</td></tr>`
         html += `<tr><th>data type</th><td>${feature.properties._9_type_of.split(",").join(", ")}</td></tr>`
@@ -55,7 +55,7 @@ const show = (features) => {
         break
       case 'organizations':
         html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a></h2>`
-        html += `<table border="1">`
+        html += `<table>`
         html += `<tr><th>mandate</th><td>${feature.properties._4_mandate}</td></tr>`
         html += `<tr><th>hazard</th><td>${feature.properties._8_hazard_.split(",").join(", ")}</td></tr>`
         html += `<tr><th>data type</th><td>${feature.properties._9_type_of.split(",").join(", ")}</td></tr>`
