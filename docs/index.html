@@ -45,7 +45,7 @@ const show = (features) => {
     console.log(feature)
     switch (feature.layer.id) {
       case 'platforms':
-        html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a><h2>`
+        html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a></h2>`
         html += `<table>`
         html += `<tr><td>mandate</td><td>${feature.properties._4_mandate}</td></tr>`
         html += `<tr><td>hazard</td><td>${feature.properties._8_hazard_.split(",").join(", ")}</td></tr>`
@@ -54,7 +54,7 @@ const show = (features) => {
         html += `</table>`
         break
       case 'organizations':
-        html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a><h2>`
+        html += `<h2><a target="_blank" href="${feature.properties._2_platfor}">${feature.properties._1_from_wh}</a></h2>`
         html += `<table>`
         html += `<tr><td>mandate</td><td>${feature.properties._4_mandate}</td></tr>`
         html += `<tr><td>hazard</td><td>${feature.properties._8_hazard_.split(",").join(", ")}</td><\tr>`
