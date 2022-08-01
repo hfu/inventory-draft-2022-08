@@ -8,6 +8,7 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
   <style>
     body { margin: 0; padding: 0; }
+    a { pointer-events: auto; }
     #map { position: absolute; top: 0; bottom: 0; width: 100% }
     #map canvas { cursor: pointer; }
     #properties { position: absolute; top: 0; 
@@ -17,7 +18,10 @@
 </head>
 <body>
   <div id="map"></div>
-  <div id="properties">Yes.</pre>
+  <div id="properties">
+    <h2>United Nations Global Geospatial Information Management (UN-GGIM) Working Group on Geospatial Information and Services for Disasters</h2>
+    <h3>Global Disaster Risk Reduction (DRR) Organizations, Geospatial Information Services and Platforms Inventory Hub</h3>
+  </div>
   <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGZ1IiwiYSI6ImNsM3FtcDZhdjBicXkzanA3Y2JzNmU2aTgifQ.HynxLHuhHkXyHdhedAgMyA';
 const map = new mapboxgl.Map({
