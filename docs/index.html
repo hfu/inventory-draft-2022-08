@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100% }
+    #map canvas { cursor: crosshair; }
+    #properties { position: absolute; top: 0; height: 40%; 
+      left: 0; right: 0;
+      overflow: auto; background: rgba(255, 255, 255, 0.8); }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <!-- <pre id="properties">Yes</pre> -->
+  <script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiaGZ1IiwiYSI6ImNsM3FtcDZhdjBicXkzanA3Y2JzNmU2aTgifQ.HynxLHuhHkXyHdhedAgMyA';
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/satellite-v9',
+  zoom: 1.5,
+  maxZoom: 8,
+  center: [0, 0],
+  projection: 'globe'
+})
+map.addControl(new mapboxgl.NavigationControl())
+map.on('load', () => {
+  map.setFog({})
+  map.addSource('inventory', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/ggim-exercise/inventory/main/docs/inventory.geojson',
+    cluster: true,
+    clusterMaxZoom: 14, // Max zoom to cluster points on
+    clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+  })
+  map.addLayer({
+    id: 'clusters',
+    type: 'circle',
+    source: 'inventory',
+    paint: {
+      'circle-color': '#51bbd6'
+    }
+  })
+})
+  </script>
+</body>
+</html>
